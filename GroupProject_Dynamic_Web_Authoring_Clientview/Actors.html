@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    
+            
+<script language="javascript" type="text/javascript">
+     
+var mySlides = new Array();
+mySlides[1] = new Image();
+mySlides[2] = new Image();
+mySlides[3] = new Image();
+mySlides[4] = new Image();
+mySlides[5] = new Image();
+mySlides[6] = new Image();
+mySlides[7] = new Image();
+mySlides[8] = new Image();
+mySlides[9] = new Image();
+mySlides[10] = new Image();
+mySlides[11] = new Image();
+mySlides[12] = new Image();
+mySlides[13] = new Image();
+mySlides[14] = new Image();
+mySlides[15] = new Image();
+mySlides[16] = new Image();
+mySlides[17] = new Image();
+mySlides[18] = new Image();
+mySlides[19] = new Image();
+mySlides[20] = new Image();
+
+
+mySlides[1].src = "images/kitharington.jpg";
+mySlides[2].src = "images/norman.jpg";
+mySlides[3].src = "images/andrew.jpg";
+mySlides[4].src = "images/aaronpaul.jpg";
+mySlides[5].src = "images/bryancraston.jpg";
+mySlides[6].src = "images/emiliaclarke.jpg";
+mySlides[7].src = "images/sophie.jpg";
+mySlides[8].src = "images/michael.jpg";
+mySlides[9].src = "images/mila.jpg";
+mySlides[10].src = "images/jennifer.jpg";
+mySlides[11].src = "images/sylvester.jpg";
+mySlides[12].src = "images/trey.jpg";
+mySlides[13].src = "images/tom.jpg";
+mySlides[14].src = "images/kaley.jpg";
+mySlides[15].src = "images/christian.jpg";
+mySlides[16].src = "images/simon.jpg";
+mySlides[17].src = "images/steve.jpg";
+mySlides[18].src = "images/nancy.jpg";
+mySlides[19].src = "images/jenna.jpg";
+mySlides[20].src = "images/rachel.jpg";
+
+
+
+var mycaptions = new Array();
+mycaptions[1] = "Name: Kit Harrington" + "\n" + "Age: 30" + "\n" + "From: Worcestershire England" + "\n" +  "Stars in: Game Of Thrones, Pompeii, Seventh Son.";
+mycaptions[2] = "Name: Norman Reedus" + "\n" + "Age: 48" + "\n" + "From: Hollywood USA" + "\n" +  "Stars in: The Walking Dead, Deuces wild, Blade 2.";
+mycaptions[3] = "Name: Andrew Lincoln" + "\n" + "Age: 43" + "\n" + "From: London England" + "\n" +  "Stars in: Breaking Bad, Need for Speed. ";
+mycaptions[4] = "Name: Aaron paul" + "\n" + "Age: 37" + "\n" + "From: Idaho USA"  + "\n" + "Stars in: Breaking bad, Need for speed, Exodus.";
+mycaptions[5] = "Name: Bryan Cranston" + "\n" + "Age: 61" + "\n" + "From: Hollywood USA" + "\n" +  "Stars in: Breaking Bad, Malcolm in the middle, The infiltrator.";
+mycaptions[6] = "Name: Emilia Clarke" + "\n" + "Age: 30" + "\n" + "From: London England" + "\n" +  "Stars in: Game of Thrones, Me before you, Terminator Genisys.";
+mycaptions[7] = "Name: Sophie Turner" + "\n" + "Age: 21" + "\n" + "From: Northampton England" + "\n" +  "Stars in: Game of Thrones, X-Men, Another Me.";
+mycaptions[8] = "Name: Michael C.Hall" + "\n" + "Age: 46" + "\n" + "From: Carolina USA" + "\n" +  "Stars in: Dexter, Cold in July.";
+mycaptions[9] = "Name: Mila Kunis" + "\n" + "Age: 33" + "\n" + "From: Los Angeles USA" + "\n" +  "Stars in: Family Guy, That 70s show, Friends with Benefits.";
+mycaptions[10] = "Name: Jennifer Aniston" + "\n" + "Age: 48" + "\n" + "From: Los Angeles USA" + "\n" +  "Stars in: Friends, Horrible Bosses.";
+mycaptions[11] = "Name: Sylvester Stallone" + "\n" + "Age: 70" + "\n" + "From: New York USA" + "\n" +  "Stars in: Rocky, Creed, The Expendables.";
+mycaptions[12] = "Name: Trey Parker" + "\n" + "Age: 47" + "\n" + "From: Colorado USA" + "\n" +  "Stars in: South Park, Team America, BASEketball.";
+mycaptions[13] = "Name: Tom Kenny" + "\n" + "Age: 54" + "\n" + "From: New York USA" + "\n" +  "Stars in: SpongeBob.";
+mycaptions[14] = "Name: Kaley Cuoco" + "\n" + "Age: 31" + "\n" + "From: California USA" + "\n" +  "Stars in: The Big Bang Theory.";
+mycaptions[15] = "Name: Christian Bale" + "\n" + "Age: 43" + "\n" + "From: Wales" + "\n" +  "Stars in: Batman, The Machinist, The Prestige.";
+mycaptions[16] = "Name: Simon Bird" + "\n" + "Age: 32" + "\n" + "From: Guildford England" + "\n" +  "Stars in: The Inbetweeners.";
+mycaptions[17] = "Name: Steve Carell" + "\n" + "Age: 54" + "\n" + "From: Massachusetts USA" + "\n" +  "Stars in: The Office, The Big Short, Foxcatcher.";
+mycaptions[18] = "Name: Nancy Cartwright" + "\n" + "Age: 59" + "\n" + "From: Ohio USA" + "\n" +  "Stars in: The Simpsons, Rugrats.";
+mycaptions[19] = "Name: Jenna Coleman" + "\n" + "Age: 30" + "\n" + "From: Blackpool England" + "\n" +  "Stars in: The Titanic, Me Before You.";
+mycaptions[20] = "Name: Rachel Wood" + "\n" + "Age: 29" + "\n" + "From: Carolina USA" + "\n" +  "Stars in: Westworld.";
+var slidenumber = 1;
+var totalslides = mySlides.length - 1;
+function showslide(direction){
+if (direction == "next"){
+(slidenumber == totalslides) ? slidenumber= 1 :
+slidenumber++;
+}else{
+(slidenumber == 1) ? slidenumber = totalslides :
+slidenumber--;
+}
+if (document.images){
+document.mySlides.src = mySlides[slidenumber].src;
+document.slidecontrols.caption.value = mycaptions[slidenumber];
+document.slidecontrols.currentslide.value = slidenumber;
+}
+}
+    function setdate ()
+    {
+     var currentdate = new Date();
+var datetime = "" + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/"
+                + currentdate.getFullYear() + " "
+document.getElementById("date").innerHTML = datetime;
+}
+    
+        function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="main.css">
+<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Where's My Program</title>
+
+</head>
+ 
+<body onload="startTime(); setdate()">
+<header>
+	<div class="wrapper">
+		<h1>Actors<span class="color">.</span></h1>
+		<nav>
+			<ul>
+				<li><a href=Index.html>Home</a></li>
+				<li><a href=Programs.html>Programs</a></li>
+				<li><a href=Actors.html>Actors</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<div id="hero-image">
+	<div class="wrapper">
+		
+	</div>
+</div>
+	<div id="primary-content">
+	<div class="wrapper">
+		<article>
+			<h3>Actors</h3>
+			<p>Hello and welcome to our site Please take the time to browse through our offering of programs. It is up to you to assign them to a suitable television channel as well as a timeslot.</p>
+			<img src="images/kitharington.jpg" width="500" height="300" name="mySlides" alt="SlideShow">
+<form name="slidecontrols">
+<p> <textarea name="caption" rows="8" cols="40">Name: Kit Harrington
+Age: 30
+From: Worcestershire England
+Stars in: Game Of Thrones, Pompeii, Seventh Son.</textarea><br>
+<br>
+<input type="button" value="Previous" onclick="showslide('previous');">
+<input type="button" value="Next" onclick="showslide('next');"><br>
+<br>
+Slide No:
+<input type="text" value="1" name="currentslide" size="5"></p>
+</form>
+		</article>
+	</div>
+</div>
+<footer>
+		<div class="wrapper">
+		<div id="footer-info">
+	 <p>Copyright 2017 Where's My Program . All rights reserved.</p>
+<div id=dateandtime>
+    <p id="date"></p>
+    <div id="txt"></div>
+    </div>
+			<p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+		</div>
+		</div>
+</footer>
+    
+</body>
+</html>

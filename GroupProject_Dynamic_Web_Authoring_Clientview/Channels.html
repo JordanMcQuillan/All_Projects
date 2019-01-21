@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+<script src="jquery-3.2.0.js"></script>
+<script src="jquery.cookie.js"></script>
+
+<script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="table.css">
+	<script type="text/javascript" src="mylibrary.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Where's My Program</title>
+		<script>
+		function checkCookie() {
+			var checklogin = $.cookie('usernameC');
+			if(checklogin == null)
+			{
+			alert("you are not logged in, please register an account");
+			window.location =("Login.html");
+			}
+			
+		    }
+						
+
+	
+
+	
+	
+$(document).ready (function(){
+    $('#butn1').click(function() {
+		$.cookie("channelselected", "BBC1", { path: '/' });
+		window.location =("Timeslots.html");
+    });
+                
+                $('#butn2').click(function() {
+		$.cookie("channelselected", "BBC2", { path: '/' });
+		window.location =("Timeslots.html");
+    });
+    
+            $('#butn3').click(function() {
+		$.cookie("channelselected", "ITV1", { path: '/' });
+		window.location =("Timeslots.html");
+    });
+    
+            $('#butn4').click(function() {
+		$.cookie("channelselected", "Channel 4", { path: '/' });
+		window.location =("Timeslots.html");
+    });
+    
+            $('#butn5').click(function() {
+		$.cookie("channelselected", "Channel 5", { path: '/' });
+		window.location =("Timeslots.html");
+    });
+    
+            $('#butn6').click(function() {
+		$.cookie("channelselected", "Sky 1", { path: '/' });
+		window.location =("Timeslots.html");
+    });
+    
+            $('#butn7').click(function() {
+		$.cookie("channelselected", "Sky Living", { path: '/' });
+		window.location =("Timeslots.html");
+    });
+    
+            $('#butn8').click(function() {
+		$.cookie("channelselected", "Sky Atlantic", { path: '/' });
+		window.location =("Timeslots.html");
+    });
+});
+
+	</script>
+
+</head>
+ 
+<body onload ="checkCookie();" >
+<header>
+	<div class="wrapper">
+		<h1>Channels<span class="color">.</span></h1>
+		<nav>
+			<ul>
+				<li><a href=Index.html>Home</a></li>
+				<li><a href=Programs.html>Programs</a></li>
+				<li><a href=Actors.html>Actors</a></li>
+				<li><a href=Channels.html>Channels</a></li>
+				<li><a href=Login.html>Logout</a></li>
+
+			</ul>
+		</nav>
+	</div>
+</header>
+<div id="hero-image">
+	<div class="wrapper">
+		
+	</div>
+</div>
+<div id="primary-content">
+	<div class="wrapper">
+<div id="table-wrapper">
+  <div id="table-scroll">
+    
+	<table style="width:100%" id= AvailablePrograms>
+  <tr>
+    <th>Channel Name</th>
+    <th>Channel Number</th>
+    <th>Details</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>BBC 1</td>
+    <td>101</td>
+    <td>
+      <ul class="ProgramDetails">
+    <li>Shows rated 18+ can only be viewed after 21:00.</li>
+    <li> </li>
+    <li></li>
+   </ul>
+    </td>
+<td><input type="button" class="tablebuttons"  value="Select" id="butn1" ></td>
+  </tr>
+  <tr>
+    <td>BBC 2</td>
+    <td>102</td>
+    <td>
+    <ul>
+    <li>HD Available</li>
+    <li>Shows rated 18+ can only be viewed after 21:00.</li>
+   </ul>
+    </td>
+<td><input type="button" class="tablebuttons"  value="Select" id="butn2" ></td>
+  </tr>
+   <td>ITV</td>
+    <td>103</td>
+    <td>
+    <ul>
+    <li></li>
+    <li>Shows rated 18+ can only be viewed after 21:00. </li>
+   </ul>
+    </td>
+<td><input type="button" class="tablebuttons"  value="Select" id="butn3" ></td>
+  </tr>
+   <td>Channel 4</td>
+    <td>104</td>
+    <td>
+    <ul>
+    <li></li>
+    <li>Shows rated 18+ can only be viewed after 21:00. </li>
+   </ul>
+    </td>
+<td><input type="button" class="tablebuttons"  value="Select" id="butn4" ></td>
+  </tr>
+   <td>Channel 5</td>
+    <td>105</td>
+    <td>
+    <ul>
+    <li>HD Available</li>
+    <li>Shows rated 18+ can only be viewed after 21:00. </li>
+   </ul>
+    </td>
+<td><input type="button" class="tablebuttons"  value="Select" id="butn5" ></td>
+  </tr>
+   <td>Sky 1</td>
+    <td>106</td>
+    <td>
+    <ul>
+    <li>HD Available</li>
+    <li>Shows rated 18+ can only be viewed after 21:00. </li>
+   </ul>
+    </td>
+<td><input type="button" class="tablebuttons"  value="Select" id="butn6" ></td>
+  </tr>
+   <td>Sky Living</td>
+    <td>107</td>
+    <td>
+    <ul>
+    <li>HD Available</li>
+    <li>Shows rated 18+ can only be viewed after 21:00. </li>
+   </ul>
+    </td>
+<td><input type="button" class="tablebuttons"  value="Select" id="butn7" ></td>
+  </tr>
+   <td>Sky Atlantic</td>
+    <td>108</td>
+    <td>
+    <ul>
+    <li>HD Available</li>
+    <li>Shows rated 18+ can only be viewed after 21:00.</li>
+   </ul>
+    </td>
+<td><input type="button" class="tablebuttons"  value="Select" id="butn8" ></td>
+  </tr>
+   
+</table>
+  </div>
+</div>
+	</div>
+</div>
+
+<footer>
+		<div class="wrapper">
+		<div id="footer-info">
+			<p>Copyright 2017 Where's My Program . All rights reserved.</p>
+			<p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+		</div>
+</footer>
+    
+</body>
+</html>

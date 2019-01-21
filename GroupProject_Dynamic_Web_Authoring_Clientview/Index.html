@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+<script src="jquery-3.2.0.js"></script>
+<script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="main.css">
+<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Where's My Program</title>
+<script>
+function deleteAllCookies() {
+			var cookies = document.cookie.split(";");
+
+			for (var i = 0; i < cookies.length; i++) {
+				var cookie = cookies[i];
+				var eqPos = cookie.indexOf("=");
+				var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+				document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+
+			}
+		}
+</script>
+
+</head>
+ 
+<body>
+<header>
+	<div class="wrapper">
+		<h1>Home<span class="color">.</span></h1>
+		<nav>
+			<ul>
+				<li><a href=Index.html>Home</a></li>
+				<li><a href=Programs.html>Programs</a></li>
+				<li><a href=Actors.html>Actors</a></li>
+				<li><a href=Login.html>Logout</a></li>
+
+				
+			</ul>
+		</nav>
+	</div>
+</header>
+<div id="hero-image">
+	<div class="wrapper">
+		
+	</div>
+</div>
+	<div id="primary-content">
+	<div class="wrapper">
+		<article>
+			<h3>Featured Content</h3>
+			<p>Hello and welcome to our site Please take the time to browse through our offering of programs. It is up to you to assign them to a suitable television channel as well as a timeslot.</p>
+			<h4> How to Book:
+			<p> Step 1: Login or Register.
+			<br> <img src="images/step1.png">
+			<p> Step 2: Go to the Program page
+			<br> <img src="images/picture1.png">
+			<br>
+			<br>
+			<br>
+			<p> Step 3: Search for your Programme then drag image to the specified box.
+			<br> <img src="images/step3.png">
+			<p> Step 4: You will then be redirected to the channel page. Simply select the channel you want.
+			<br> <img src="images/picture4.png">
+			<p> Final step: Select the time slot you want to be broadcasted. Then click "Pick this time" at the bottom of the page.
+			<br> <img src="images/finalstep.png">
+			
+		</article>
+	</div>
+</div>
+<footer>
+		<div class="wrapper">
+		<div id="footer-info">
+			<p>Copyright 2017 Where's My Program . All rights reserved.</p>
+			<p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+		</div>
+		</div>
+</footer>
+    
+</body>
+</html>

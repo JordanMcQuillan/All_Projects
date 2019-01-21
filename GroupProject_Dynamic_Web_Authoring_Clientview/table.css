@@ -1,0 +1,45 @@
+#table-wrapper {
+  position:relative;
+
+}
+#table-scroll {
+  height:300px;
+  overflow:auto;
+  margin-top:20px;
+}
+#table-wrapper table {
+  width:100%;
+    
+}
+
+#table-wrapper table thead th .text {
+  position:absolute;
+  top:-20px;
+  z-index:2;
+  height:20px;
+  width:35%;
+}
+\
+
+.tablebuttons:hover {
+	color: #02b8dd;
+}
+th
+{
+   background-color: #D3D3D3;
+   font-weight: bold;
+   text-decoration: underline;
+     border: 1px solid #999;
+  padding: 0.5rem;
+   text-align: center;
+  
+}
+td {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
+}
+#AvailablePrograms
+{
+	height:300px;
+}

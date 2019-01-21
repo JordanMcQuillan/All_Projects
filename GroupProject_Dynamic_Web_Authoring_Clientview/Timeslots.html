@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="timeslot.css">
+<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+<script src="jquery-3.2.0.js"></script>
+<script src="jquery.cookie.js"></script>
+<script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="mylibrary.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Where's My Program</title>
+<script>
+		function checkCookie() {
+			var checklogin = $.cookie('usernameC');
+			if(checklogin == null)
+			{
+			alert("you are not logged in, please register an account");
+			window.location =("Login.html");
+			}
+			
+		    }
+						
+
+$(function() {
+  $("#choosetime").click(function() {
+   var program = $.cookie("programselected");
+   var contentrating = $.cookie("contentrating");
+   var channel = $.cookie("channelselected");
+  
+   var chosentime =  $('input[name=selector]:checked').val() ; 
+   if (chosentime == "9pm - 10pm" || chosentime == "10pm - 11pm" || chosentime == "11pm - 12am" || chosentime == "12am - 1am" || chosentime == "1am - 2am" || chosentime == "2am - 3am" || chosentime == "3am - 4am"  && contentrating == "TV-MA")
+	 { 
+	 alert ("Program : " +program + "\nContent Rating: " +contentrating + "\nChannel: " +channel + "\nThank you for giving this Program a home.");
+	 window.location =("Index.html");
+	 }
+   else
+	 {
+	 alert ("This program cannot be aired until after 9pm");
+	 }
+  });
+});
+    </script>
+</head>
+ 
+<body onload ="checkCookie();" >
+<header>
+	<div class="wrapper">
+		<h1>Time Slots<span class="color">.</span></h1>
+		<nav>
+			<ul>
+				<li><a href=Index.html>Home</a></li>
+				<li><a href=Programs.html>Programs</a></li>
+				<li><a href=Actors.html>Actors</a></li>
+				<li><a href=Channels.html>Channels</a></li>
+			    <li><a href=Timeslots.html>Time Slots</a></li>	
+				<li><a href=Login.html>Logout</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<div id="hero-image">
+	<div class="wrapper">
+		
+	</div>
+</div>
+	<div id="primary-content">
+	<div class="myForm">
+	
+	<h2> Please select a time slot from below:</h2>
+	
+  <ul>
+      <li>
+    <input type="radio" id="u-option" value="7am - 8am" name="selector">
+    <label for="u-option">7am - 8am</label>
+    
+    <div class="checker"></div>
+  </li>
+  <li>
+    <input type="radio" id="s-option" value="8am - 9am" name="selector">
+    <label for="s-option">8am - 9am</label>
+    
+    <div class="checker"></div>
+  </li>
+  
+  <li>
+    <input type="radio" id="r-option" value="9am - 10am" name="selector">
+    <label for="r-option">9am - 10am</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+  
+  <li>
+    <input type="radio" id="q-option" value="10am - 11am" name="selector">
+    <label for="q-option">10am - 11am</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+      <li>
+    <input type="radio" id="p-option" value="11am - 12pm" name="selector">
+    <label for="p-option">11am - 12pm</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+      <li>
+    <input type="radio" id="o-option" value="12pm - 1pm" name="selector">
+    <label for="o-option">12pm - 1pm</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+      <li>
+    <input type="radio" id="n-option" value="1pm - 2pm" name="selector">
+    <label for="n-option">1pm - 2pm</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+      <li>
+    <input type="radio" id="m-option" value="2pm - 3pm" name="selector">
+    <label for="m-option">2pm - 3pm</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+      <li>
+    <input type="radio" id="l-option" value="3pm - 4pm" name="selector">
+    <label for="l-option">3pm - 4pm</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+      <li>
+    <input type="radio" id="t-option" value="4pm - 5pm" name="selector">
+    <label for="t-option">4pm - 5pm</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+      
+      <li>
+    <input type="radio" id="k-option" value="5pm - 6pm" name="selector">
+    <label for="k-option">5pm - 6pm</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+    
+      <li>
+    <input type="radio" id="j-option" value="6pm - 7pm" name="selector">
+    <label for="j-option">6pm - 7pm</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+      
+      <li>
+    <input type="radio" id="i-option" value="7pm - 8pm" name="selector">
+    <label for="i-option">7pm - 8pm</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+         <li>
+    <input type="radio" id="h-option" value="8pm - 9pm" name="selector">
+    <label for="h-option">8pm - 9pm</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+         <li>
+    <input type="radio" id="g-option" value="9pm - 10pm" name="selector">
+    <label for="g-option">9pm - 10pm</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+         <li>
+    <input type="radio" id="f-option" value="10pm - 11pm" name="selector">
+    <label for="f-option">10pm - 11pm</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+         <li>
+    <input type="radio" id="e-option" value="11pm - 12am" name="selector">
+    <label for="e-option">11pm - 12am</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+         <li>
+    <input type="radio" id="d-option" value="12am - 1am" name="selector">
+    <label for="d-option">12am - 1am</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+         <li>
+    <input type="radio" id="c-option" value="1am - 2am" name="selector">
+    <label for="c-option">1am - 2am</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+         <li>
+    <input type="radio" id="b-option" value="2am - 3am" name="selector">
+    <label for="b-option">2am - 3am</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+         <li>
+    <input type="radio" id="a-option" value="3am - 4am" name="selector">
+    <label for="a-option">3am - 4am</label>
+    
+    <div class="checker"><div class="inside"></div></div>
+  </li>
+</ul>
+    
+        <input  type="submit" id="choosetime" value="Pick this time"/>
+</div>
+</div> 
+<footer>
+		<div class="wrapper">
+		<div id="footer-info">
+			<p>Copyright 2017 Where's My Program . All rights reserved.</p>
+			<p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+		</div>
+		</div>
+</footer>
+    
+</body>
+</html>

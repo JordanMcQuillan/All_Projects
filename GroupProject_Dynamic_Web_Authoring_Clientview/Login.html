@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+<script src="jquery-3.2.0.js"></script>
+<script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="main.css">
+<script src="jquery.cookie.js"></script>
+<script type="text/javascript" src="mylibrary.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Where's My Program</title>
+<script>
+		function createCookie() {
+		
+			var username = document.cookieform.username.value;
+			var password = document.cookieform.password.value;
+			if (username == "" || password == "")
+			{
+			alert("please  fill in fields to enter")
+			}
+			else{
+			$.cookie("usernameC", username, { path: '/' });
+			$.cookie("passwordC", password, { path: '/' });
+			alert("Thank you " + username + ", you have now registered");
+			}
+		}
+		
+
+
+		function checkCookie() {
+			var registeredusername = document.cookieform.username.value;
+			var registeredpassword = document.cookieform.password.value;
+			if (registeredusername == $.cookie('usernameC') && registeredpassword == GetCookie('passwordC') ) {
+				alert("Welcome " + $.cookie('usernameC'));
+				window.location =("Index.html");
+				
+			} else {
+				alert("No account found, please double check text entry or register a new account.");
+			}
+		}
+
+		function showCookie() {
+			if ($.cookie("username") || $.cookie("password")) {
+				document.cookieform.username.value = $.cookie("username");
+				document.cookieform.password.value = $.cookie("password");
+			} else {
+				alert("Please Register!");
+			}
+		}
+
+		function deleteAllCookies() {
+			var cookies = document.cookie.split(";");
+
+			for (var i = 0; i < cookies.length; i++) {
+				var cookie = cookies[i];
+				var eqPos = cookie.indexOf("=");
+				var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+				document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+
+			}
+		}
+	</script>
+
+</head>
+ 
+<body>
+<header>
+	<div class="wrapper">
+		<h1>Log In<span class="color">.</span></h1>
+		<nav>
+			
+		</nav>
+	</div>
+</header>
+<div id="hero-image">
+	<div class="wrapper">
+		
+	</div>
+</div>
+	<div id="primary-content">
+	<div class="wrapper">
+		<article>
+			<h3>Featured Content</h3>
+<form name="cookieform">
+
+		<p>Username: <input type="text" name="username" size="30" placeholder="Enter your username here" onfocus="this.placeholder=''" onblur="this.placeholder='Enter your username here'" /></p>
+
+		<p>Create your password: <input type="password" name="password" size="30" placeholder="Enter your username here" onfocus="this.placeholder=''" onblur="this.placeholder='Enter your password here'"></p>
+
+		<input type="button" class="button-1" value="Register" onclick="createCookie();">
+
+		<p><input type="button" class="button-1" value="login" onclick="checkCookie();">
+
+			<p><input type="Reset" class="button-1" value="Delete Account" onclick="deleteAllCookies();">
+	</form>
+
+	<br />			
+		
+		</article>
+	</div>
+</div>
+<footer>
+		<div class="wrapper">
+		<div id="footer-info">
+			<p>Copyright 2017 Where's My Program . All rights reserved.</p>
+			<p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+		</div>
+		</div>
+</footer>
+    
+</body>
+</html>

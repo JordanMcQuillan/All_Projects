@@ -1,0 +1,315 @@
+<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+<script src="jquery-3.2.0.js"></script>
+<script src="jquery.cookie.js"></script>
+
+<script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="table.css">
+<script type="text/javascript" src="mylibrary.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Where's My Program</title>
+<style>
+#slidetext{
+  font-family: 'Crete Round', serif;
+	font-weight: bold;
+	color: #444;
+	font-size: 16px;
+	text-align:justify;
+	resize: none;
+}
+#searchbar{
+   font-family: 'Crete Round', serif;
+	font-weight: bold;
+	color: #444;
+	font-size: 16px;
+ 
+}
+
+  
+}
+}
+</style>
+<style>
+#droppable { width: 400px; position:relative; height:250px; padding: 0.5em;  float: right;  margin: 10px; }
+</style>
+
+<script language="javascript" type="text/javascript">
+function checkCookie() {
+			var checklogin = $.cookie('usernameC');
+			if(checklogin == null)
+			{
+			alert("you are not logged in, please register an account");
+			window.location =("Login.html");
+			}
+						} 
+function randomize ()
+{
+ var randomslide = Math.floor(Math.random() * 16) + 1
+      var r = randomslide;
+      
+      
+      document.slidecontrols.currentslide.value = r;
+      document.slidecontrols.caption.value = mycaptions[r];
+      document.mySlides.src = mySlides[r].src;
+}
+	
+var mySlides = new Array();
+mySlides[1] = new Image();
+mySlides[2] = new Image();
+mySlides[3] = new Image();
+mySlides[4] = new Image();
+mySlides[5] = new Image();
+mySlides[6] = new Image();
+mySlides[7] = new Image();
+mySlides[8] = new Image();
+mySlides[9] = new Image();
+mySlides[10] = new Image();
+mySlides[11] = new Image();
+mySlides[12] = new Image();
+mySlides[13] = new Image();
+mySlides[14] = new Image();
+mySlides[15] = new Image();
+
+mySlides[1].src = "images/BreakingBad.jpg";
+mySlides[2].src = "images/WalkingDead.png";
+mySlides[3].src = "images/dexter.jpg";
+mySlides[4].src = "images/family_guy.jpg";
+mySlides[5].src = "images/dexters_laboratory.jpg";
+mySlides[6].src = "images/friends.png";
+mySlides[7].src = "images/rocky.jpg";
+mySlides[8].src = "images/south_park.jpg";
+mySlides[9].src = "images/spongebob.jpg";
+mySlides[10].src = "images/the_big_bang_theory.png";
+mySlides[11].src = "images/the_dark_knight.jpg";
+mySlides[12].src = "images/the_inbetweeners.png";
+mySlides[13].src = "images/the_simpsons.jpg";
+mySlides[14].src = "images/Titanic.jpg";
+mySlides[15].src = "images/westworld.jpg";
+
+var ContentRating = new Array();
+ContentRating[1] = "TV-Y";
+ContentRating[2] = "TV-Y7";
+ContentRating[3] = "TV-G";
+ContentRating[4] = "PG";
+ContentRating[5] = "TV-14";
+ContentRating[6] = "TV-MA";
+
+
+var mycaptions = new Array();
+mycaptions[1] = "Name: Breaking Bad" + "\n" + "First aired in 2008" + "\n" + "5 seasons" + "\n" +  "62 episodes" + "\n" +  "Parental rating:TV-MA";
+mycaptions[2] = "Name:The Walking Dead" + "\n" + "First aired in 2010" + "\n" + "7 seasons (ongoing)" + "\n" +  "Parental rating:TV-MA";
+mycaptions[3] = "Name: Dexter" + "\n" + "First aired in 2006" + "\n" + "96 episodes" + "\n" +  "8 seasons" + "\n" + "Parental rating:TV-MA";
+mycaptions[4] = "Name: Family Guy" + "\n" + "First aired in 1999" + "\n" + "15 seasons (ongoing"  + "\n" + "Parental rating:TV-MA";
+mycaptions[5] = "Name: Dexters Laboratory" + "\n" + "First aired in 1997" + "\n" + "4 seasons"  + "\n" + "78 episodes"+ "\n" +  "Rarental rating:TV-PG";
+mycaptions[6] = "Name: Friends" + "\n" + "first aired in 1994" + "\n" + "10 seasons" + "\n" +  "236 episodes" + "\n" + "10 seasons" + "\n";
+mycaptions[7] = "Name: Rocky I" + "\n" + "Released in 1976" + "\n" + "Film's span 7 movies" + "\n" +  "Parental rating:TV-MA";
+mycaptions[8] = "Name: South Park" + "\n" + "First aired in 1997" + "\n" + "20 seasons" + "\n" +  "Parental rating:TV-MA";
+mycaptions[9] = "Name: Spongebob Squarepants" + "\n" + "First aired in 1999" + "\n" + "8 seasons" + "\n" +  "Parental rating:TV-Y";
+mycaptions[10] = "Name: The Big Bang Theory" + "\n" + "First aired in 2007" + "\n" + "10 seasons (ongoing)" + "\n" +  "Parental rating:TV-14";
+mycaptions[11] = "Name: The Dark Knight" + "\n" + "Released in 2008" + "\n" + "Director:Chrstopher Nolan" + "\n" +  "9.0 rating on IMDB" + "\n" +  "Parental rating:TV-PG";
+mycaptions[12] = "Name: The Inbetweeners" + "\n" + "First aired in 2008" + "\n" + "3 seasons" + "\n" + "12 episodes" + "\n" + "Parental rating:TV-MA";
+mycaptions[13] = "Name: The Simpsons" + "\n" + "First aired in 1989" + "\n" + "28 seasons" + "\n" +  "Parental rating:TV-PG ";
+mycaptions[14] = "Name: Titanic" + "\n" + "Released in 1997" + "\n" + "runtime:194 minutes" + "\n" +  "Parental rating:TV-14";
+mycaptions[15] = "Name: Westworld" + "\n" + "First aired in 2016" + "\n" + "1 season (ongoing)" + "\n" +  "10 episodes" + "\n" +  "Parental rating:TV-MA";
+
+var programnames = new Array();
+programnames[1] = "Breaking bad";
+programnames[2] = "The Walking Dead";
+programnames[3] = "Dexter";
+programnames[4] = "Family Guy";
+programnames[5] = "Dexter's Laboratory";
+programnames[6] = "Friends";
+programnames[7] = "Rocky I";
+programnames[8] = "South Park";
+programnames[9] = "Spongebob Squarepants";
+programnames[10] = "The Big Bang Theory";
+programnames[11] = "The Dark Knight";
+programnames[12] = "The Inbetweeners";
+programnames[13] = "The Simpsons";
+programnames[14] = "Titanic";
+programnames[15] = "Westworld";
+
+/*$(document).keypress(function (e){
+    if(e.keyCode == 37) // left arrow
+    {
+        // your action here, for example
+        $('#btnPrevious').click();
+    }
+    else if(e.keyCode == 39)    // right arrow
+    {
+        // your action here, for example
+        $('#btnNext').click();
+    }
+});*/
+
+$( function() {
+    var searchpredictor = [
+      "Breaking bad",
+      "The Walking Dead",
+      "Dexter",
+      "Family Guy",
+      "Dexter's Laboratory",
+      "Friends",
+      "Rocky I",
+      "South Park",
+      "Spongebob Squarepants",
+      "The Big Bang Theory",
+       "The Dark Knight",
+      "The Inbetweeners",
+      "The Simpsons",
+      "Titanic",
+      "Westworld"
+    ];
+    $( "#tags" ).autocomplete({
+      source: searchpredictor
+    });
+  } );
+  
+$(document).ready(function () {
+
+    $('#tags').on('keyup', function () {
+      var $Searchresult = this.value
+      var a = programnames.indexOf($Searchresult);
+      if(a>0)
+      {
+      document.slidecontrols.currentslide.value = a;
+      document.slidecontrols.caption.value = mycaptions[a];
+      document.mySlides.src = mySlides[a].src;
+
+      }
+
+
+}).change();
+   
+});
+
+var slidenumber = 1;
+var totalslides = mySlides.length - 1;
+function showslide(direction){
+if (direction == "next"){
+(slidenumber == totalslides) ? slidenumber= 1 :
+slidenumber++;
+}else{
+(slidenumber == 1) ? slidenumber = totalslides :
+slidenumber--;
+}
+if (document.images){
+document.mySlides.src = mySlides[slidenumber].src;
+document.slidecontrols.caption.value = mycaptions[slidenumber];
+document.slidecontrols.currentslide.value = slidenumber;
+}
+}
+  $(function() {
+    $( "#draggable" ).draggable();
+    $( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+		  var chosenContentRating;
+
+          if(slidenumber == 1 || slidenumber == 2 || slidenumber == 3 || slidenumber == 4 || slidenumber == 6 || slidenumber == 7 || slidenumber == 8 || slidenumber == 12 || slidenumber == 15)
+          {chosenContentRating = ContentRating[6]}
+          else if (slidenumber == 5 || slidenumber == 13)
+          {chosenContentRating = ContentRating[4]}
+          else if (slidenumber == 10 || slidenumber == 14)
+          {chosenContentRating = ContentRating[5]}
+          else if (slidenumber == 9)
+          {chosenContentRating = ContentRating[1]}
+		  var chosenprogramname = programnames[slidenumber];
+
+        
+		$.cookie("contentrating", chosenContentRating,{ path: '/' });
+		$.cookie("programselected", chosenprogramname,{ path: '/' });
+         alert( "Programme Selected: " + $.cookie("programselected"));
+		 alert( "Age Rating: " + $.cookie("contentrating") + ", You will now be directed to choose a channel." );
+		 window.location =("Channels.html");
+
+      }
+    });
+  });
+ function increaseFontSize() {
+        var id = document.getElementById('slidetext');
+        var style = window.getComputedStyle(id, null).getPropertyValue('font-size');
+        var currentSize = parseInt(style);
+        currentSize=currentSize+4;
+        document.getElementById('slidetext').style.fontSize = currentSize.toString();
+    }
+ function decreaseFontSize() {
+        var id = document.getElementById('slidetext');
+        var style = window.getComputedStyle(id, null).getPropertyValue('font-size');
+        var currentSize = parseInt(style);
+        currentSize=currentSize-4;
+        document.getElementById('slidetext').style.fontSize = currentSize.toString();
+    }
+</script>
+</head>
+ 
+<body onload ="checkCookie();" >
+<header>
+	<div class="wrapper">
+		<h1>Programmes<span class="color">.</span></h1>
+		<nav>
+			<ul>
+				<li><a href=Index.html>Home</a></li>
+				<li><a href=Programs.html>Programmes</a></li>
+				<li><a href=Actors.html>Actors</a></li>
+				<li><a href=Login.html>Logout</a></li>
+
+			</ul>
+		</nav>
+	</div>
+</header>
+<div id="hero-image">
+  		
+	<div class="wrapper">
+		
+	</div>
+</div>
+	<div id="primary-content">
+	 
+	<div class="wrapper">
+	  
+		<article>
+			<h3>Please choose a programme</h3>
+			<div class="ui-widget" id="searchbar">
+  <label for="tags">Search for a Programme: </label>
+  <input id="tags">
+</div><br>
+			 <div id="droppable" class="ui-widget-header">
+  <p>Drag image of programme here to proceed</p>
+</div>
+	
+
+			<img src="images/BreakingBad.jpg" id="draggable" class="ui-widget-content" width="300" height="270" name="mySlides" alt="SlideShow">
+
+<form name="slidecontrols">
+<p> <textarea readonly name="caption" id="slidetext" rows="8" cols="40">Name: Breaking Bad
+First aired in 2008
+5 seasons
+62 episodes
+Parental rating:TV-MA</textarea><br>
+<br>
+<input type="button"  class="button-1" id=btnPrevious value="Previous" onclick="showslide('previous');">
+<input type="button"  class="button-1" id=btnNext value="Next" onclick="showslide('next');">
+<input type="button"  class="button-1" value="Pick For Me" onclick="randomize();"><br>
+<input type="button"  class="button-1" value="Decrease Text" onclick="decreaseFontSize();">
+<input type="button"  class="button-1" value="Increase Text" onclick="increaseFontSize();">
+<br><br>
+Programme No:
+<input type="text" readonly value="1" name="currentslide" size="5"></p>
+</form>
+		</article>
+	</div>
+</div>
+<footer>
+		<div class="wrapper">
+		<div id="footer-info">
+			<p>Copyright 2017 Where's My Program . All rights reserved.</p>
+			<p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+		</div>
+		</div>
+</footer>
+    
+</body>
+</html>

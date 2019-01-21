@@ -1,0 +1,106 @@
+
+
+
+
+
+.myForm ul{
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+   text-align:center:
+}
+
+
+.myForm ul li{
+  color: #aaaaaa;
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 30x;
+	border-bottom: 1px solid #ffffff;
+	
+}
+
+ .myForm ul li:hover{
+	background-color:  #777a7c;
+}
+
+.myForm ul li input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+
+.myForm ul li label{
+  display: block;
+  position: relative;
+  font-weight: 300;
+  font-size: 1.35em;
+  padding: 25px 25px 25px 80px;
+  margin: 10px auto;
+  height: 30px;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+}
+
+ .myForm ul li:hover label{
+	color: #0DFF92;
+}
+
+ .myForm ul li .checker{
+  display: block;
+  position: absolute;
+  border: 5px solid #AAAAAA;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  top: 30px;
+  left: 20px;
+	z-index: 5;
+	transition: border .25s linear;
+	-webkit-transition: border .25s linear;
+}
+
+ul li:hover .checker {
+  border: 5px solid #0DFF92;
+}
+
+ul li .checker::before {
+  display: block;
+  position: absolute;
+	content: '';
+  border-radius: 100%;
+  height: 15px;
+  width: 15px;
+  top: 5px;
+	left: 5px;
+  margin: auto;
+	transition: background 0.25s linear;
+	-webkit-transition: background 0.25s linear;
+}
+
+input[type=radio]:checked ~ .checker {
+  border: 5px solid #0DFF92;
+}
+
+input[type=radio]:checked ~ .checker::before{
+  background: #0DFF92;
+}
+
+input[type=radio]:checked ~ label{
+  color: #0DFF92;
+}
+#choosetime{
+  background-color: #363738;
+   height: 50px;
+     width: 200px;
+
+}
+
+
+input[type=Submit]:Hover{
+  color: #0DFF92;
+}
